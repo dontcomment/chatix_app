@@ -1,0 +1,44 @@
+.chatinput-wrapper {
+    position: fixed;
+    bottom: 40px;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 40%;
+
+    .line{
+        margin-bottom: 12px;
+    }
+
+    form {
+        display: flex;
+        justify-content: space-between;
+    }
+
+}
+
+.textinput {
+    height: 58px;
+    width: 100%;
+    margin-right: 16px;
+    border-radius: 23px;
+    background: #FFF;
+    color: #272544;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    padding: 0px 32px;
+}
+
+.submit {
+    height: 58px;
+    padding: 0px 51px;
+    border-radius: 23px;
+    background: var(--linear, linear-gradient(180deg, #42FFDD 0%, #36DBFF 100%));
+    color: #272544;
+    text-align: center;
+    font-size: 14px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: normal;
+    cursor: pointer;
+}

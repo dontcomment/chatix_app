@@ -1,0 +1,47 @@
+.login-wrapper {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 505px;
+}
+
+.login {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+
+
+    input {
+        width: 505px;
+        height: 80px;
+        border-radius: 32px;
+        background: #FFF;
+        color: #272544;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        padding: 0px 32px;
+        margin-bottom: 16px;
+        
+    }
+
+    input::placeholder {
+        color: #272544;
+    }
+
+    button {
+        width: 505px;
+        height: 80px;
+        border-radius: 32px;
+        background: var(--linear, linear-gradient(180deg, #42FFDD 0%, #36DBFF 100%));
+        color: #272544;
+        text-align: center;
+        font-size: 24px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+        cursor: pointer;
+    }
+}

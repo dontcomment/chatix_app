@@ -1,0 +1,27 @@
+.userslist-wrapper {
+    position: fixed;
+    top: 50%;
+    transform: translate(7%, -50%);
+    left: 28px;
+    width: 300px;
+    span {
+        color: #55FFF5;
+        text-align: left;
+        font-size: 14px;
+        font-style: normal;
+        font-weight: 400;
+        line-height: normal;
+    }
+    ul {
+        list-style-type: none;
+        li {
+            color: white;
+            text-align: left;
+            font-size: 14px;
+            font-style: normal;
+            font-weight: 400;
+            line-height: normal;
+            margin-top: 4px;
+        }
+    }
+}
