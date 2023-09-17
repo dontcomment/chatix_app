@@ -11,10 +11,6 @@ export default function UsersList({socket}) {
             setUsers([...data]);
         })
 
-        socket.on('ROOM:USER_UPDATE', (data) => {
-            setUsers([...data]);
-        })
-
     }, [socket])
 
     
