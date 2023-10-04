@@ -14,11 +14,6 @@ const socketIO = require('socket.io')(http, {
 
 })
 
-app.get('api', (req, res) => {
-    res.json({
-        message: 'Hello server'
-    })
-})
 
 socketIO.on('connection', (socket) => {
     console.log(`${socket.id} user connected`)
@@ -38,10 +33,11 @@ socketIO.on('connection', (socket) => {
     })
 
     socket.on('ROOM:NEW_MESSAGE', ({room, user, text}) => {
-        const hour = new Date().getHours()
-        const min = new Date().getMinutes()
+        let hour = new Date().getHours()
+        let min = new Date().getMinutes()
+        let key = new Date()
 
-        if (min.length < 2) {
+        if (min < 10) {
             return min = '0' + min
         }
         
@@ -51,6 +47,7 @@ socketIO.on('connection', (socket) => {
             user,
             text,
             time,
+            key
         }
         rooms.get(room).get('messages').push(obj)
         socketIO.to(room).emit('ROOM:NEW_MESSAGE', obj)
@@ -60,7 +57,7 @@ socketIO.on('connection', (socket) => {
     socket.on('disconnect', () => {
         rooms.forEach((item, room) => {
             if (item.get('users').delete(socket.id)) {
-                const users = [...rooms.get('users').values()]
+                const users = [...rooms.get(room).get('users').values()]
                 socketIO.to(room).emit('ROOM:USER_UPDATE', users)
             }
         })
